@@ -44,13 +44,14 @@ export const initialEventHandler = () => {
                     console.log(result.body);
                     resultElement.innerHTML = '';
                     result.body.forEach((element, index) => {
-                        const pictureUrl = element.Picture?.PictureUrl1 ?? `./img/notfound.jpeg`;
+                        const pictureUrl = element.Picture?.PictureUrl1 ?? `./img/notfound001.jpeg`;
                         const pictureDescription = element.Picture?.PictureDescription1 ?? `目前該景點沒有照片`;
                         const itemData = {
                             pictureUrl: pictureUrl,
                             pictureDescription: pictureDescription,
                             name: element.Name,
                             index: index,
+                            city: element.City,
                         };
                         resultElement.innerHTML += createCardHTMLElement(itemData);
                     });
@@ -70,28 +71,20 @@ export const getFilterConditions = (keyword, area, classFilter) => {
 };
 
 export const createCardHTMLElement = itemData => {
-    return `
-        <div>
-            <div class="card">
-                <img src="${itemData.pictureUrl}" class="card-img-top" alt="${itemData.pictureDescription}" h-100>
-                <div class="card-body">
-                    <h5 class="card-title">${itemData.name}</h5>
-                    <a href="#" class="card-btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" key="${itemData.index}">更多資訊</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="cards">
-            <article class="card">
+    return ` <div class="result-card">
                 <a href="#" key="${itemData.index}" ><img class="card-img" src="${itemData.pictureUrl}" alt="${itemData.pictureDescription}"/>
                 </a> 
-                <div class="content">
-                    <h3>${itemData.name}</h3>
-                    <span>縣市區域</span>
+                <div class="card-content">
+                    <h6 class="card-text">${itemData.name}</h6>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="card-location">${itemData.city}</span>
+                    <span class="card-like"><i class="fas fa-heart"></i></span>
                 </div>
-            </article>
-        </div>
+                
+            </div>
     `;
+
+    createModalElement();
 };
 
 export const createModalElement = () => {

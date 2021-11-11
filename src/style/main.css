@@ -89,66 +89,6 @@ h4 {
     z-index: 5;
 }
 
-/* RWD 選單 */
-@media (max-width: 576px) {
-    .menu {
-        float: right;
-    }
-    .menu li {
-        float: left;
-    }
-    .menu li a {
-        display: block;
-        color: #69ca62;
-        padding: 1em;
-        text-decoration: none;
-    }
-}
-
-/*在PC上隱藏漢堡選單*/
-
-.showmenu {
-    display: none;
-}
-@media (max-width: 576px) {
-    .menu {
-        /*隱藏選單開始*/
-        max-height: 0px;
-        overflow: hidden;
-        /*隱藏選單結束*/
-        transition: max-height 2.3s;
-        margin-top: 1px;
-        /*絕對定位疊在網頁上*/
-        position: absolute;
-        z-index: 100;
-        /*header 80px+1px boder 線條*/
-        top: 81px;
-        left: 0;
-        right: 0;
-        background: #0f222b;
-    }
-    .menu li {
-        float: none;
-        border-bottom: 1px dashed #69ca62;
-    }
-    .menu li a {
-        transition: all 0.3s;
-    }
-    .menu li a:hover {
-        background: #69ca62;
-        color: #fff;
-    }
-    .showmenu {
-        display: block;
-        float: right;
-        margin: 1em;
-    }
-    /*jQ點擊後動態在 body 加上 class */
-    .menu-show .menu {
-        max-height: 500px;
-    }
-}
-
 @media (max-width: 576px) {
     .navbar-box {
         float: none;

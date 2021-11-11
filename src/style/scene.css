@@ -1,16 +1,632 @@
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+.container {
+    max-height: 100vh;
+    overflow-y: scroll;
+    border: 1px solid gray;
+    scroll-snap-type: y mandatory;
+}
+
+html {
+    color: #000;
+    background: #fff;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset,
+img {
+    border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+ol,
+ul {
+    list-style: none;
+}
+caption,
+th {
+    text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+q:before,
+q:after {
+    content: '';
+}
+abbr,
+acronym {
+    border: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-family: Noto Sans TC;
+    color: #737373;
+}
+
+input,
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+}
+
+h2 {
+    margin: 0px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 65px;
+    color: #769763;
+}
+
+@media (max-width: 576px) {
+    h2 {
+        margin: 0px;
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 65px;
+        color: #769763;
+    }
+}
+
+h4 {
+    margin: 0px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: #737373;
+}
+
+@media (max-width: 576px) {
+    h4 {
+        margin: 0px;
+        font-family: Noto Sans TC;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 70px;
+        letter-spacing: 0.15em;
+        color: #737373;
+    }
+}
+
+h6 {
+    position: absolute;
+    width: 216px;
+    height: 24px;
+
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+
+    color: #737373;
+}
+
+/* 首頁 navbar */
+.navbar-box {
+    position: sticky;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    height: 98.85057067871094px;
+    width: 1440px;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #fafafa;
+    box-sizing: border-box;
+    box-shadow: 0px 0.5px 0px rgba(196, 196, 196, 0.3);
+    z-index: 5;
+}
+
+@media (max-width: 576px) {
+    .navbar-box {
+        float: none;
+        position: sticky;
+        left: 0%;
+        right: 0%;
+        top: 0%;
+        height: 98.85057067871094px;
+        width: 600px;
+        border-radius: 0px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid #fafafa;
+        box-sizing: border-box;
+        box-shadow: 0px 0.5px 0px rgba(196, 196, 196, 0.3);
+        z-index: 5;
+    }
+}
+
+.navbar-logo {
+    position: absolute;
+    height: 62px;
+    width: 107px;
+    left: 5%;
+    top: 17px;
+    border-radius: 0px;
+}
+
+@media (max-width: 576px) {
+    .navbar-logo {
+        position: absolute;
+        left: 20%;
+        right: 20%;
+        top: 15%;
+        bottom: 14.67%;
+    }
+}
+
+.navbar-heart {
+    color: #769763;
+    position: absolute;
+    right: 5%;
+    top: 45px;
+}
+
+@media (max-width: 576px) {
+    .navbar-heart {
+        display: none;
+    }
+}
+
+.navbar-heart:hover {
+    color: #f1d675;
+}
+
+.navbar-link1 {
+    color: #737373;
+    position: absolute;
+    right: 13%;
+    top: 30px;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .navbar-link1 {
+        display: none;
+    }
+}
+
+.navbar-link1:hover {
+    color: #769763;
+}
+
+.myMOUSE {
+    cursor: pointer;
+}
+
+.navbar-link2 {
+    position: absolute;
+    right: 25%;
+    top: 30px;
+    text-align: center;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.2em;
+
+    /* gray */
+
+    color: #737373;
+}
+
+@media (max-width: 576px) {
+    .navbar-link2 {
+        display: none;
+    }
+}
+
+.navbar-link2:hover {
+    color: #769763;
+}
+
+.navbar-link1-eng {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    /* gray */
+
+    color: #737373;
+}
+
+/* 主要搜尋功能 */
+
+.search-group {
+    justify-content: center;
+    position: static;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+
+.searchDivider1 {
+    border-left: 1px solid #38546d;
+    height: 45px;
+    position: absolute;
+    left: 780px;
+    top: 160px;
+    z-index: 4;
+}
+
+.searchDivider2 {
+    border-left: 1px solid #38546d;
+    height: 45px;
+    position: absolute;
+    left: 630px;
+    top: 160px;
+}
+
+@media (max-width: 576px) {
+    .searchDivider1 {
+        display: none;
+    }
+
+    .searchDivider2 {
+        display: none;
+    }
+}
+
+.city-select {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px 0px 32px;
+    position: absolute;
+    width: 150px;
+    height: 66px;
+    left: 630px;
+    top: 150px;
+
+    background: #ffffff;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+    border: none;
+
+    flex: none;
+    order: 2;
+    flex-grow: 1;
+    margin: 0px 0px;
+}
+
+@media (max-width: 576px) {
+    .city-select {
+        appearance: none;
+        position: absolute;
+        width: 280px;
+        height: 46px;
+        left: 47px;
+        top: 150px;
+        border-radius: 10px;
+    }
+}
+
+.class-select {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 10px 10px 32px;
+
+    position: absolute;
+    width: 150px;
+    height: 66px;
+    left: 780px;
+    top: 150px;
+
+    background: #ffffff;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px;
+    border: none;
+
+    flex: none;
+    order: 2;
+    flex-grow: 1;
+    margin: 0px 0px;
+}
+
+@media (max-width: 576px) {
+    .class-select {
+        appearance: none;
+        position: absolute;
+        width: 280px;
+        height: 46px;
+        left: 47px;
+        top: 200px;
+        position: absolute;
+        border-radius: 10px;
+    }
+}
+.search-form {
+    appearance: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 24px 0px 32px;
+
+    position: absolute;
+    width: 224px;
+    height: 66px;
+    left: 350px;
+    top: 150px;
+
+    background: #ffffff;
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 5px 0px 0px 5px;
+    border: none;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 0px;
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        appearance: none;
+        position: absolute;
+        width: 180px;
+        height: 46px;
+        left: 47px;
+        top: 100px;
+        border-radius: 10px;
+    }
+}
+
+.search-btn {
+    appearance: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    position: absolute;
+    width: 160px;
+    height: 66px;
+    right: 350px;
+    top: 150px;
+
+    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 5px 5px 0px;
+    border: none;
+
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+    margin: 0px 0px;
+    color: #769763;
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 576px) {
+    .search-btn {
+        appearance: none;
+        width: 50px;
+        height: 47px;
+        position: absolute;
+        left: 280px;
+        top: 100px;
+        border-radius: 10px;
+    }
+}
+
+.search-btn:hover {
+    color: #f1d675;
+    background-color: #769763;
+}
+
+/* results cards */
+
+.result-cards {
+    grid-template-columns: repeat(auto-fill);
     grid-gap: 20px;
-}
-
-.card {
-    display: grid;
-    grid-template-rows: max-content 200px 1fr;
-}
-
-.card img {
-    object-fit: cover;
+    position: absolute;
     width: 100%;
-    height: 100%;
+    left: 8%;
+    top: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+    .result-cards {
+        grid-template-columns: repeat(auto-fill);
+        grid-gap: 20px;
+        position: absolute;
+        width: 100%;
+        height: 2000px;
+        left: 8%;
+        top: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.card-content {
+    width: 248px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card {
+    display: grid;
+    width: 250px;
+    height: 250px;
+    border: 0.5px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 20%;
+    position: relative;
+}
+
+@media (max-width: 576px) {
+    .result-card {
+        display: grid;
+        width: 250px;
+        height: 250px;
+        border: 0.5px solid #c4c4c4;
+        box-sizing: border-box;
+        border-radius: 5px;
+        width: 80%;
+        position: relative;
+    }
+}
+
+.card-img {
+    object-fit: cover;
+    aspect-ratio: 248 / 168;
+    width: 100%;
+    height: 66%;
+}
+
+.card-text {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 140px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.card-location {
+    position: absolute;
+    bottom: 15px;
+    left: 35px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    letter-spacing: 0.05em;
+    color: #737373;
+}
+
+.fa-map-marker-alt {
+    color: #769763;
+    position: absolute;
+    bottom: 17px;
+    left: 17px;
+}
+
+.fa-heart {
+    color: #769763;
+}
+
+.card-like {
+    position: absolute;
+    bottom: 17px;
+    right: 17px;
+}
+
+/* footer */
+.footer {
+    position: absolute;
+    top: 2850px;
+    width: 1440px;
+    height: 70px;
+    background-color: #769763;
+    text-align: center;
+    /* color: #fafafa; */
+}
+
+@media (max-width: 576px) {
+    .footer {
+        display: none;
+    }
+}
+
+.footer-text {
+    color: #fafafa;
+    font-size: 14px;
+}
+
+@media (max-width: 576px) {
+    .footer-text {
+        color: #fafafa;
+        font-size: 10px;
+        position: absolute;
+        left: 17px;
+    }
 }
