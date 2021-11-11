@@ -209,6 +209,22 @@ h4 {
     color: #737373;
 }
 
+.navbar-link1-eng:hover {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 14px;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #737373;
+    padding-bottom: 5px;
+    border-bottom: solid 3px #f1d675;
+}
+
 /* .navbar-link1-eng:hover {
     color: #769763;
 } */

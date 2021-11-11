@@ -1,6 +1,12 @@
-/**
- * 頁面載入處理事件
- */
+import '../../style/detail.css';
+import { renderDataRecord } from '../../render';
+import { initialEventHandler, getInputData, fetchDataToResultElement } from '../../event';
+
 window.addEventListener('load', () => {
-    console.log('.about');
+    renderDataRecord();
+    initialEventHandler();
+
+    const urlSearchParameters = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParameters);
+    fetchDataToResultElement(params.keyword, params.area, params.classFilter);
 });

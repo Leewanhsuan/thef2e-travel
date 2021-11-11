@@ -14,46 +14,47 @@
         />
     </head>
     <body>
-        <!-- navbar -->
-        <div class="navbar-box">
-            <a target="_self" href="http://0.0.0.0:8080"
-                ><img class="navbar-logo" src="./img/logo.png" alt="Travel的Logo"
-            /></a>
-            <a target="_self" href="http://0.0.0.0:8080/scene.html"
-                ><span class="navbar-link1 myMOUSE"
-                    >找景點<br />
-                    <p class="navbar-link1-eng">ATTRACTION</p>
-                </span></a
-            >
-            <span class="navbar-link2 myMOUSE"
-                >玩活動<br />
-                <p class="navbar-link1-eng">ACTIVITIES</p>
-            </span>
-            <i class="fas fa-heart navbar-heart myMOUSE"></i>
-        </div>
-        <!-- Search -->
-        <div class="search-group">
-            <div class="input-group">
-                <form id="search-form" class="search-form">
-                    <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
-                </form>
+        <div class="container-fluid">
+            <!-- navbar -->
+            <div class="navbar-box">
+                <a target="_self" href="http://0.0.0.0:8080"
+                    ><img class="navbar-logo" src="./img/logo.png" alt="Travel的Logo"
+                /></a>
+                <a target="_self" href="http://0.0.0.0:8080/scene.html"
+                    ><span class="navbar-link1 myMOUSE"
+                        >找景點<br />
+                        <p class="navbar-link1-eng">ATTRACTION</p>
+                    </span></a
+                >
+                <span class="navbar-link2 myMOUSE"
+                    >玩活動<br />
+                    <p class="navbar-link2-eng">ACTIVITIES</p>
+                </span>
+                <i class="fas fa-heart navbar-heart myMOUSE"></i>
+            </div>
+            <!-- Search -->
+            <div class="search-group">
+                <div class="input-group">
+                    <form id="search-form" class="search-form">
+                        <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
+                    </form>
+                </div>
+
+                <!-- City Selection-->
+                <select class="city-select" id="citySelect"></select>
+                <div class="searchDivider1"></div>
+
+                <!-- Class Selection-->
+                <select class="class-select" id="classSelect"></select>
+                <button id="search-btn" class="search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="searchDivider2"></div>
             </div>
 
-            <!-- City Selection-->
-            <select class="city-select" id="citySelect"></select>
-            <div class="searchDivider1"></div>
-
-            <!-- Class Selection-->
-            <select class="class-select" id="classSelect"></select>
-            <button id="search-btn" class="search-btn" type="submit">
-                <i class="fas fa-search"></i>
-            </button>
-            <div class="searchDivider2"></div>
-        </div>
-
-        <!-- Search Result -->
-        <div id="result" class="result-cards">
-            <!-- <div class="result-card">
+            <!-- Search Result -->
+            <div id="result" class="result-cards">
+                <!-- <div class="result-card">
                 <img class="result-card-img" src="./img/logo.png" alt="這是景點照片" />
                 <div class="card-content">
                     <h6 class="card-text">title</h6>
@@ -61,14 +62,15 @@
                     <span class="card-like"><i class="fas fa-heart"></i></span>
                 </div>
             </div> -->
-        </div>
+            </div>
 
-        <!-- footer -->
-        <div class="footer">
-            <p class="footer-text">
-                Copyright © 2021 TRAVEL. All rights reserved. <br />
-                Code: 珊迪 | Design: Lola_Lin | API: 交通部 PTX 平台
-            </p>
+            <!-- footer -->
+            <div class="footer">
+                <p class="footer-text">
+                    Copyright © 2021 TRAVEL. All rights reserved. <br />
+                    Code: 珊迪 | Design: Lola_Lin | API: 交通部 PTX 平台
+                </p>
+            </div>
         </div>
     </body>
 </html>

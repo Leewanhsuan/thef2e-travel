@@ -4,9 +4,68 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>景點資訊</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        about
+        <div class="container-fluid">
+            <!-- navbar -->
+            <div class="navbar-box">
+                <a target="_self" href="http://0.0.0.0:8080"
+                    ><img class="navbar-logo" src="./img/logo.png" alt="Travel的Logo"
+                /></a>
+
+                <a target="_self" href="http://0.0.0.0:8080/scene.html"
+                    ><span class="navbar-link1 myMOUSE"
+                        >找景點<br />
+                        <p class="navbar-link1-eng">ATTRACTION</p>
+                    </span></a
+                >
+                <span class="navbar-link2 myMOUSE"
+                    >玩活動<br />
+                    <p class="navbar-link1-eng">ACTIVITIES</p>
+                </span>
+                <i class="fas fa-heart navbar-heart myMOUSE"></i>
+            </div>
+
+            <span class="info-name">馬沙溝海洋休閒運動渡假中心</span>
+            <div class="info-div">
+                <span class="info-location"><i class="fas fa-map-marker-alt"></i>縣市區域</span>
+                <span class="info-phone"><i class="fas fa-phone"></i>091288287</span>
+                <span class="info-time"><i class="fas fa-clock"></i>開放時間</span>
+                <span class="info-url"><i class="fas fa-link"></i>官方網站</span>
+                <p class="description-detail">
+                    馬沙溝本是一個沿海的傳統漁村，黃昏時分，漫天晚霞映照著海面漁船點點的景象，讓此地在昔日有台南八景之一的「綠汕帆影」之稱。又因擁有細柔沙灘及清澈海水，在進行規劃後，1980年代的馬沙溝，每到夏季就會吸引大批遊客前往遊玩，眾多攤販及多元的水上活動，使得當時馬沙溝的絡繹人潮，就如同當今的墾丁一般。雖在場域設施因時光而老舊後，沉寂了一陣子，但在精心改造後，完善的設施與得天獨厚的濱海條件，讓馬沙溝濱海遊憩區逐漸恢復了當時的盛況。煥然一新的馬沙溝濱海遊憩區，將各式活動的使用區域做了更為妥善的規劃，其中包括露營區、烤肉區、水上活動區等，多項休閒項目任君挑選。當然戲水最注重的安全救援也不可少，遊憩區內的救生員不時關注著遊憩的安全狀況，給到此一遊的旅客安心舒適的遊玩體驗。
+                </p>
+            </div>
+            <img class="img-div" src="./img/city-div-img001.jpeg" alt="" />
+            <button class="share-btn" value="複製連結" onClick="copyToClipboard()">分享景點資訊</button>
+            <script>
+                function copyToClipboard(text) {
+                    var inputc = document.body.appendChild(document.createElement('input'));
+                    inputc.value = window.location.href;
+                    inputc.focus();
+                    inputc.select();
+                    document.execCommand('copy');
+                    inputc.parentNode.removeChild(inputc);
+                    alert('已複製至剪貼簿');
+                }
+            </script>
+
+            <!-- footer -->
+            <div class="footer">
+                <p class="footer-text">
+                    Copyright © 2021 TRAVEL. All rights reserved. <br />
+                    Code: 珊迪 | Design: Lola_Lin | API: 交通部 PTX 平台
+                </p>
+            </div>
+        </div>
     </body>
 </html>
