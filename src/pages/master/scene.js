@@ -1,6 +1,6 @@
 import '../../style/scene.css';
 import { renderDataRecord } from '../../render';
-import { initialEventHandler, getInputData, fetchDataToResultElement } from '../../event';
+import { initialEventHandler, getInputData, fetchDataToResultElement, createCardHTMLElement } from '../../event';
 
 window.addEventListener('load', () => {
     renderDataRecord();
@@ -14,12 +14,5 @@ window.addEventListener('load', () => {
     searchBtn.addEventListener('click', () => {
         const [keyword, area, classFilter] = getInputData();
         window.location.href = `http://0.0.0.0:8080/scene.html?keyword=${keyword}&area=${area}&classFilter=${classFilter}`;
-    });
-
-    const detailClick = document.getElementById('card-img');
-    detailClick.addEventListener('click', () => {
-        console.log('1');
-        // const [keyword, area, classFilter] = getInputData();
-        // window.location.href = `http://0.0.0.0:8080/scene.html?keyword=${keyword}&area=${area}&classFilter=${classFilter}`;
     });
 });

@@ -3,6 +3,16 @@ p {
     color: #737373;
 }
 
+a {
+    appearance: none;
+    text-decoration: none;
+    color: #737373;
+}
+
+a:hover {
+    color: #769763;
+}
+
 .container {
     max-height: 100vh;
     overflow-y: scroll;
@@ -149,6 +159,7 @@ h4 {
     right: 13%;
     top: 30px;
     text-align: center;
+    letter-spacing: 0.2em;
 }
 
 @media (max-width: 576px) {
@@ -227,7 +238,7 @@ h4 {
 
 .info-name {
     position: absolute;
-    width: 100%;
+    width: 500px;
     height: 40px;
     left: 10%;
     top: 200px;
@@ -321,18 +332,16 @@ h4 {
 
 .description-detail {
     position: absolute;
-    top: 150px;
+    top: 180px;
     font-size: 14px;
 }
 
 .img-div {
     position: absolute;
+    top: -50px;
     width: 600px;
-    left: 50%;
-    top: 200px;
+    left: 600px;
     border-radius: 5px;
-    object-fit: cover;
-    aspect-ratio: 600 / 420;
 }
 
 /* footer */

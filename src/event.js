@@ -58,8 +58,48 @@ export const fetchDataToResultElement = (keyword, area, classFilter) => {
                         name: element.Name,
                         index: index,
                         city: element.City,
+                        id: element.ID,
+                        detail: element.DescriptionDetail,
+                        phone: element.Phone,
+                        openTime: element.OpenTime,
+                        website: element.WebsiteUrl,
                     };
                     resultElement.innerHTML += createCardHTMLElement(itemData);
+                });
+            }
+        });
+};
+
+export const fetchIdToResultElement = id => {
+    const detailElement = document.getElementById('detailResult');
+    console.log(detailElement);
+    console.log(id);
+    fetch(`${base_url}$filter=contains(ID%2C%20'${id}') &$format=JSON`, {
+        headers: getAuthorizationHeader(),
+    })
+        .then(request => {
+            return request.json().then(data => ({ status: request.status, body: data }));
+        })
+        .then(result => {
+            if (result.status === 200) {
+                console.log(result.body);
+                // detailElement.innerHTML = '';
+                result.body.forEach((element, index) => {
+                    const pictureUrl = element.Picture?.PictureUrl1 ?? `./img/notfound001.jpeg`;
+                    const pictureDescription = element.Picture?.PictureDescription1 ?? `目前該景點沒有照片`;
+                    const itemData = {
+                        pictureUrl: pictureUrl,
+                        pictureDescription: pictureDescription,
+                        name: element.Name,
+                        index: index,
+                        city: element.City,
+                        id: element.ID,
+                        detail: element.DescriptionDetail,
+                        phone: element.Phone,
+                        openTime: element.OpenTime,
+                        website: element.WebsiteUrl,
+                    };
+                    detailElement.innerHTML += createDetailElement(itemData);
                 });
             }
         });
@@ -75,31 +115,33 @@ export const getFilterConditions = (keyword, area, classFilter) => {
 };
 
 export const createCardHTMLElement = itemData => {
-    return ` <div class="result-card">
-                <a href="#" key="${itemData.index}" ><img class="card-img" src="${itemData.pictureUrl}" alt="${itemData.pictureDescription}"/>
-                </a> 
-                <div class="card-content">
-                    <h6 class="card-text">${itemData.name}</h6>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span class="card-location">${itemData.city}</span>
-                    <span class="card-like"><i class="fas fa-heart"></i></span>
-                </div>
-                
+    return `
+        <div class="result-card">
+            <a href="http://0.0.0.0:8080/detail.html?id=${itemData.id}" key="${itemData.index}" >
+                <img class="card-img" id="card-img" src="${itemData.pictureUrl}" alt="${itemData.pictureDescription}"/>
+            </a> 
+            <div class="card-content">
+                <h6 class="card-text">${itemData.name}</h6>
+                <i class="fas fa-map-marker-alt"></i>
+                <span class="card-location">${itemData.city}</span>
+                <span class="card-like"><i class="fas fa-heart"></i></span>
             </div>
+        </div>
     `;
-
-    createModalElement();
+    createDetailElement();
 };
 
-export const createModalElement = () => {
-    const modalElement = document.getElementById('staticBackdrop');
-    modalElement.addEventListener('show.bs.modal', function(event) {
-        const recordIndex = event.relatedTarget.attributes['key'].value;
-        const recordData = dataset[recordIndex];
-        const modalTitleElement = document.getElementById('modalTitle');
-        const modalBodyElement = document.getElementById('modalBody');
-
-        modalTitleElement.innerHTML = recordData.Name;
-        modalBodyElement.innerHTML = recordData.Description ?? recordData.DescriptionDetail;
-    });
+export const createDetailElement = itemData => {
+    return `
+        <span class="info-name">${itemData.name}</span>
+            <div class="info-div">
+                <span class="info-location"><i class="fas fa-map-marker-alt"></i>${itemData.city}</span>
+                <span class="info-phone"><i class="fas fa-phone"></i><a href="tel:${itemData.phone}">${itemData.phone}</a></span>
+                <span class="info-time"><i class="fas fa-clock"></i>${itemData.openTime}</span>
+                <span class="info-url"><i class="fas fa-link"></i><a href="${itemData.website}">官方網站</a></span>
+                <p class="description-detail">
+                    ${itemData.detail}
+                </p>
+            <img class="img-div" src="${itemData.pictureUrl}" alt="${itemData.pictureDescription}" />
+    `;
 };

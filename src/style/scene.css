@@ -238,6 +238,7 @@ h6 {
     right: 13%;
     top: 30px;
     text-align: center;
+    letter-spacing: 0.2em;
 }
 
 @media (max-width: 576px) {
