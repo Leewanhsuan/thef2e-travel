@@ -34,39 +34,43 @@ export const initialEventHandler = () => {
     const searchBtn = document.getElementById('search-btn');
     searchBtn.addEventListener('click', function(event) {
         const [keyword, area, classFilter] = getInputData();
-        const filterConditions = getFilterConditions(keyword, area, classFilter);
-        fetch(`${base_url}${filterConditions}&$top=30&$format=JSON`, { headers: getAuthorizationHeader() })
-            .then(request => {
-                return request.json().then(data => ({ status: request.status, body: data }));
-            })
-            .then(result => {
-                if (result.status === 200) {
-                    console.log(result.body);
-                    resultElement.innerHTML = '';
-                    result.body.forEach((element, index) => {
-                        const pictureUrl = element.Picture?.PictureUrl1 ?? `./img/notfound001.jpeg`;
-                        const pictureDescription = element.Picture?.PictureDescription1 ?? `目前該景點沒有照片`;
-                        const itemData = {
-                            pictureUrl: pictureUrl,
-                            pictureDescription: pictureDescription,
-                            name: element.Name,
-                            index: index,
-                            city: element.City,
-                        };
-                        resultElement.innerHTML += createCardHTMLElement(itemData);
-                    });
-                    // createModalElement();
-                }
-            });
+        fetchDataToResultElement(keyword, area, classFilter);
     });
+};
+
+export const fetchDataToResultElement = (keyword, area, classFilter) => {
+    const resultElement = document.getElementById('result');
+    const filterConditions = getFilterConditions(keyword, area, classFilter);
+    fetch(`${base_url}${filterConditions}&$top=30&$format=JSON`, { headers: getAuthorizationHeader() })
+        .then(request => {
+            return request.json().then(data => ({ status: request.status, body: data }));
+        })
+        .then(result => {
+            if (result.status === 200) {
+                console.log(result.body);
+                resultElement.innerHTML = '';
+                result.body.forEach((element, index) => {
+                    const pictureUrl = element.Picture?.PictureUrl1 ?? `./img/notfound001.jpeg`;
+                    const pictureDescription = element.Picture?.PictureDescription1 ?? `目前該景點沒有照片`;
+                    const itemData = {
+                        pictureUrl: pictureUrl,
+                        pictureDescription: pictureDescription,
+                        name: element.Name,
+                        index: index,
+                        city: element.City,
+                    };
+                    resultElement.innerHTML += createCardHTMLElement(itemData);
+                });
+            }
+        });
 };
 
 export const getFilterConditions = (keyword, area, classFilter) => {
     const filterHeader = `$filter=`;
-    const handleKeywordString = `contains(Name,'${keyword}')`;
-    const handleAreaString = area === '城市' ? '' : ` and City eq '${area}'`;
+    const handleKeywordString = `contains(Name,'${keyword ?? ''}')`;
+    const handleAreaString = area === '城市' ? '' : ` and City eq '${area ?? ''}'`;
     const handleClassFilterString =
-        classFilter === 'default' ? '' : ` and (Class1 eq '${classFilter}' or Class2 eq '${classFilter}')`;
+        classFilter === 'default' ? '' : ` and (Class1 eq '${classFilter ?? ''}' or Class2 eq '${classFilter ?? ''}')`;
     return `${filterHeader}` + `${handleKeywordString}` + `${handleAreaString}` + `${handleClassFilterString}`;
 };
 
