@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>玩景點</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <!-- navbar -->
+        <div class="navbar-box">
+            <img class="navbar-logo" src="./img/logo.png" alt="rapTravel的Logo" />
+            <span class="navbar-link1 myMOUSE"
+                >找景點<br />
+                <p class="navbar-link1-eng">ATTRACTION</p>
+            </span>
+            <span class="navbar-link2 myMOUSE"
+                >玩活動<br />
+                <p class="navbar-link1-eng">ACTIVITIES</p>
+            </span>
+            <i class="fas fa-heart navbar-heart myMOUSE"></i>
+        </div>
+        <!-- Search -->
+        <div class="search-group">
+            <div class="input-group">
+                <form id="search-form" class="search-form">
+                    <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
+                </form>
+            </div>
+
+            <!-- City Selection-->
+            <select class="city-select" id="citySelect"></select>
+            <div class="searchDivider1"></div>
+
+            <!-- Class Selection-->
+            <select class="class-select" id="classSelect"></select>
+            <button id="search-btn" class="search-btn" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <div class="searchDivider2"></div>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <img class="card-img" src="" alt="" />
+                <div class="content">
+                    <h3>title</h3>
+                    <span>縣市區域</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Search Result -->
+        <div id="result" class="row row-cols-1 row-cols-md-3 g-4"></div>
+    </body>
+</html>
