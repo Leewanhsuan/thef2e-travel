@@ -46,7 +46,7 @@ export const fetchDataToResultElement = (keyword, area, classFilter) => {
             return request.json().then(data => ({ status: request.status, body: data }));
         })
         .then(result => {
-            if (result.status === 200) {
+            if (result.status === 200 && resultElement) {
                 console.log(result.body);
                 resultElement.innerHTML = '';
                 result.body.forEach((element, index) => {
