@@ -12,3 +12,10 @@ export const renderDataRecord = () => {
         classElement.innerHTML += `<option class="selectList" value="">${element}</option>`;
     });
 };
+
+export const renderActivityRecord = () => {
+    const activityElement = document.getElementById('activitySelect');
+    Object.values(cityList).forEach(element => {
+        activityElement.innerHTML += `<option class="selectList" value="">${element}</option>`;
+    });
+};

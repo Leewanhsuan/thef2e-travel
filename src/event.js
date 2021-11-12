@@ -1,5 +1,5 @@
 import { cityList, classList } from './data';
-import { base_url, getAuthorizationHeader } from './utils/commonApi';
+import { base_url, base_activity_url, getAuthorizationHeader } from './utils/commonApi';
 
 /**
  * 初始DOM事件

@@ -297,8 +297,6 @@ h6 {
     text-transform: uppercase;
 
     color: #737373;
-    padding-bottom: 5px;
-    border-bottom: solid 3px #f1d675;
 }
 .navbar-link2-eng {
     font-family: Open Sans;
@@ -312,11 +310,13 @@ h6 {
     text-transform: uppercase;
 
     color: #737373;
+    padding-bottom: 5px;
+    border-bottom: solid 3px #f1d675;
 }
 
 /* 主要搜尋功能 */
 
-.search-group {
+.activity-search-group {
     justify-content: center;
     position: static;
     left: 0px;
@@ -324,43 +324,16 @@ h6 {
     z-index: 2;
 }
 
-.searchDivider1 {
-    border-left: 1px solid #38546d;
-    height: 45px;
-    position: absolute;
-    left: 780px;
-    top: 160px;
-    z-index: 4;
-}
-
-.searchDivider2 {
-    border-left: 1px solid #38546d;
-    height: 45px;
-    position: absolute;
-    left: 630px;
-    top: 160px;
-}
-
-@media (max-width: 576px) {
-    .searchDivider1 {
-        display: none;
-    }
-
-    .searchDivider2 {
-        display: none;
-    }
-}
-
-.city-select {
+.activity-select {
     appearance: none;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px 24px 0px 32px;
     position: absolute;
-    width: 150px;
+    width: 300px;
     height: 66px;
-    left: 630px;
+    left: 450px;
     top: 150px;
 
     background: #ffffff;
@@ -375,86 +348,13 @@ h6 {
 }
 
 @media (max-width: 576px) {
-    .city-select {
+    .activity-select {
         appearance: none;
         position: absolute;
         width: 280px;
         height: 46px;
         left: 47px;
         top: 150px;
-        border-radius: 10px;
-    }
-}
-
-.class-select {
-    appearance: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 10px 10px 32px;
-
-    position: absolute;
-    width: 150px;
-    height: 66px;
-    left: 780px;
-    top: 150px;
-
-    background: #ffffff;
-    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 0px;
-    border: none;
-
-    flex: none;
-    order: 2;
-    flex-grow: 1;
-    margin: 0px 0px;
-}
-
-@media (max-width: 576px) {
-    .class-select {
-        appearance: none;
-        position: absolute;
-        width: 280px;
-        height: 46px;
-        left: 47px;
-        top: 200px;
-        position: absolute;
-        border-radius: 10px;
-    }
-}
-.search-form {
-    appearance: none;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px 24px 0px 32px;
-
-    position: absolute;
-    width: 224px;
-    height: 66px;
-    left: 350px;
-    top: 150px;
-
-    background: #ffffff;
-    box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 5px 0px 0px 5px;
-    border: none;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    margin: 0px 0px;
-}
-
-@media (max-width: 576px) {
-    .search-form {
-        appearance: none;
-        position: absolute;
-        width: 180px;
-        height: 46px;
-        left: 47px;
-        top: 100px;
         border-radius: 10px;
     }
 }
@@ -470,7 +370,7 @@ h6 {
     position: absolute;
     width: 160px;
     height: 66px;
-    right: 350px;
+    left: 750px;
     top: 150px;
 
     box-shadow: 0px 2px rgba(0, 0, 0, 0.25);
@@ -566,11 +466,11 @@ h6 {
 }
 
 .card-img {
-    object-fit: cover;
-    aspect-ratio: 248 / 168;
     width: 100%;
     height: 66%;
     border-radius: 5px 5px 0px 0px;
+    aspect-ratio: 248 / 168;
+    object-fit: cover;
     overflow-x: hidden;
 }
 
