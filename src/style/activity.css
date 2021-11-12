@@ -357,7 +357,7 @@ h6 {
     .activity-select {
         appearance: none;
         position: absolute;
-        width: 280px;
+        width: 230px;
         height: 46px;
         left: 47px;
         top: 150px;
@@ -398,7 +398,7 @@ h6 {
         height: 47px;
         position: absolute;
         left: 280px;
-        top: 100px;
+        top: 150px;
         border-radius: 10px;
     }
 }

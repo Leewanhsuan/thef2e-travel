@@ -186,12 +186,9 @@ h4 {
     font-weight: normal;
     font-size: 16px;
     line-height: 23px;
-    /* identical to box height */
 
     text-align: center;
     letter-spacing: 0.2em;
-
-    /* gray */
 
     color: #737373;
 }
@@ -255,6 +252,12 @@ h4 {
     margin: 0px 10px;
     padding-bottom: 15px;
 }
+
+@media (max-width: 576px) {
+    .info-name {
+        font-size: 20px;
+    }
+}
 .info-div {
     position: absolute;
     width: 520px;
@@ -263,6 +266,12 @@ h4 {
     top: 250px;
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 576px) {
+    .info-div {
+        max-width: 350px;
+    }
 }
 
 .info-div span {
@@ -279,6 +288,12 @@ h4 {
     padding-bottom: 10px;
     color: #737373;
     font-size: 16px;
+}
+
+@media (max-width: 576px) {
+    .info-div span {
+        font-size: 16px;
+    }
 }
 
 .share-btn {
@@ -300,6 +315,12 @@ h4 {
     background-color: #ffffff;
     box-sizing: border-box;
     border-radius: 50px;
+}
+
+@media (max-width: 576px) {
+    .share-btn {
+        display: none;
+    }
 }
 
 .share-btn:hover {
@@ -342,6 +363,16 @@ h4 {
     width: 600px;
     left: 600px;
     border-radius: 5px;
+}
+
+@media (max-width: 576px) {
+    .img-div {
+        position: absolute;
+        top: 400px;
+        max-width: 300px;
+        left: 17px;
+        border-radius: 5px;
+    }
 }
 
 /* footer */

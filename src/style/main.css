@@ -119,9 +119,11 @@ h4 {
 @media (max-width: 576px) {
     .navbar-logo {
         position: absolute;
-        left: 20%;
+        height: 41px;
+        width: 75px;
+        left: 5%;
         right: 20%;
-        top: 15%;
+        top: 20%;
         bottom: 14.67%;
     }
 }
@@ -154,7 +156,9 @@ h4 {
 
 @media (max-width: 576px) {
     .navbar-link1 {
-        display: none;
+        position: absolute;
+        left: -180px;
+        top: 25%;
     }
 }
 
@@ -186,7 +190,9 @@ h4 {
 
 @media (max-width: 576px) {
     .navbar-link2 {
-        display: none;
+        position: absolute;
+        left: 150px;
+        top: 24%;
     }
 }
 
