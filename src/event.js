@@ -124,7 +124,7 @@ export const createCardHTMLElement = itemData => {
                 <h6 class="card-text">${itemData.name}</h6>
                 <i class="fas fa-map-marker-alt"></i>
                 <span class="card-location">${itemData.city}</span>
-                <span class="card-like"><i class="fas fa-heart"></i></span>
+                <span class="card-like"><i class="fas fa-heart" ></i></span>
             </div>
         </div>
     `;

@@ -5,6 +5,12 @@
     scroll-snap-type: y mandatory;
 }
 
+a {
+    appearance: none;
+    text-decoration: none;
+    color: #737373;
+}
+
 html {
     color: #000;
     background: #fff;
@@ -440,7 +446,7 @@ h6 {
 .result-card {
     display: grid;
     width: 250px;
-    height: 250px;
+    height: 350px;
     border: 0.5px solid #c4c4c4;
     box-sizing: border-box;
     border-radius: 5px;
@@ -448,15 +454,11 @@ h6 {
     position: relative;
 }
 
-.result-card:hover {
-    box-shadow: 5px 5px 0px #f1d675;
-}
-
 @media (max-width: 576px) {
     .result-card {
         display: grid;
         width: 250px;
-        height: 250px;
+        height: 350px;
         border: 0.5px solid #c4c4c4;
         box-sizing: border-box;
         border-radius: 5px;
@@ -480,7 +482,7 @@ h6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 140px;
+    top: 160px;
     right: 0;
     bottom: 0;
     left: 0;
@@ -489,8 +491,8 @@ h6 {
 
 .card-location {
     position: absolute;
-    bottom: 15px;
-    left: 35px;
+    bottom: 73px;
+    left: 45px;
     font-family: Noto Sans TC;
     font-style: normal;
     font-weight: normal;
@@ -501,10 +503,52 @@ h6 {
     color: #737373;
 }
 
-.fa-map-marker-alt {
+.card-website {
+    position: absolute;
+    bottom: 17px;
+    left: 45px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    letter-spacing: 0.05em;
+    color: #737373;
+}
+
+.card-time {
+    position: absolute;
+    bottom: 42px;
+    left: 45px;
+    font-family: Noto Sans TC;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    letter-spacing: 0.05em;
+    color: #737373;
+}
+
+.fa-link {
     color: #769763;
     position: absolute;
     bottom: 17px;
+    left: 17px;
+}
+
+.fa-map-marker-alt {
+    color: #769763;
+    position: absolute;
+    bottom: 75px;
+    left: 17px;
+}
+
+.fa-calendar-alt {
+    color: #769763;
+    position: absolute;
+    bottom: 45px;
     left: 17px;
 }
 

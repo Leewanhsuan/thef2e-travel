@@ -1,4 +1,5 @@
 export const base_url = `https://ptx.transportdata.tw/MOTC/v2/Tourism/ScenicSpot?`;
+export const base_activity_url = `https://ptx.transportdata.tw/MOTC/v2/Tourism/Activity/`;
 /**
  * 頁面載入處理事件
  */
