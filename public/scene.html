@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>玩活動</title>
+        <title>找景點</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
         <link
             rel="stylesheet"
@@ -27,35 +27,42 @@
                         <p class="navbar-link1-eng">ATTRACTION</p>
                     </span></a
                 >
-                <a target="_self" href="http://0.0.0.0:8080/activity.html"></a>
+                <a target="_self" href="http://0.0.0.0:8080/activity.html">
                     <span class="navbar-link2 myMOUSE"
                         >玩活動<br />
                         <p class="navbar-link2-eng">ACTIVITIES</p>
-                    </span></a>
+                    </span></a
+                >
                 <i class="fas fa-heart navbar-heart myMOUSE"></i>
             </div>
             <!-- Search -->
-            <div class="activity-search-group">
+            <div class="search-group">
+                <div class="input-group">
+                    <form id="search-form" class="search-form">
+                        <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
+                    </form>
+                </div>
+
                 <!-- City Selection-->
-                <select class="activity-select" id="activitySelect"></select>
-                <button id="activity-search-btn" class="search-btn" type="submit">
+                <select class="city-select" id="citySelect"></select>
+                <div class="searchDivider1"></div>
+
+                <!-- Class Selection-->
+                <select class="class-select" id="classSelect"></select>
+                <button id="search-btn" class="search-btn" type="submit">
                     <i class="fas fa-search"></i>
                 </button>
+                <div class="searchDivider2"></div>
             </div>
 
             <!-- Search Result -->
-            <div id="result-activity" class="result-cards">
+            <div id="result" class="result-cards">
                 <!-- <div class="result-card">
-                <img class="card-img" src="./img/logo.png" alt="這是景點照片" />
+                <img class="result-card-img" src="./img/logo.png" alt="這是景點照片" />
                 <div class="card-content">
                     <h6 class="card-text">title</h6>
-                    <i class="fas fa-map-marker-alt"></i>
-                <span class="card-location">台北市</span>
-                <i class="far fa-calendar-alt"></i>
-                <span class="card-time">2021-07-24~2021-07-31</span>
-                <i class="fas fa-link"></i>
-                <span class="card-website">官方網站</span>
-                <span class="card-like"><i class="fas fa-heart"></i></span>
+                    <span class="card-location"><i class="fas fa-map-marker-alt"></i>縣市區域</span>
+                    <span class="card-like"><i class="fas fa-heart"></i></span>
                 </div>
             </div> -->
             </div>
@@ -68,5 +75,5 @@
                 </p>
             </div>
         </div>
-    </body>
+    <script type="text/javascript" src="/js/scene.js"></script></body>
 </html>
