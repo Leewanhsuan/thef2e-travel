@@ -3,4 +3,4 @@ thef2eWeek1：旅行
 # 系統說明
 專案運行方式是使用 npm install
 # 使用技術
-ES6＋、CSS flex、Webpack
+ES6＋、CSS、Webpack
