@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>台灣觀光指南</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+        <link rel="icon" href="./img/titleicon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- navbar -->
+            <div class="navbar-box">
+                <a target="_self" href="./index.html"
+                    ><img class="navbar-logo" src="./img/logo.png" alt="Travel的Logo"
+                /></a>
+
+                <a target="_self" href="./scene.html"
+                    ><span class="navbar-link1 myMOUSE"
+                        >找景點<br />
+                        <p class="navbar-link1-eng">ATTRACTION</p>
+                    </span></a
+                >
+                <a target="_self" href="./activity.html">
+                    <span class="navbar-link2 myMOUSE"
+                        >玩活動<br />
+                        <p class="navbar-link1-eng">ACTIVITIES</p>
+                    </span></a
+                >
+                <i class="fas fa-heart navbar-heart myMOUSE" onclick="heartClickFunction()"></i>
+                <script>
+                    heartClickFunction = () => {
+                        alert('請抖內解鎖收藏功能(努力開發中QQ)');
+                    };
+                </script>
+            </div>
+            <div>
+                <img class="index-banner" src="./img/banner.jpg" alt="Travel首頁照片" />
+            </div>
+            <!-- Search-->
+            <div class="search-group" action="./event.html" method="GET">
+                <div class="input-group">
+                    <form id="search-form" class="search-form">
+                        <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
+                    </form>
+                </div>
+
+                <!-- City Selection-->
+                <select class="city-select" id="citySelect"></select>
+                <div class="searchDivider1"></div>
+
+                <!-- Class Selection-->
+                <select class="class-select" id="classSelect"></select>
+                <button id="search-btn" class="search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="searchDivider2"></div>
+            </div>
+
+            <!-- index recommended city-->
+            <div class="city-div">
+                <div class="city-text-div">
+                    <h2 class="city-div-title">Explore</h2>
+                    <h4 class="city-div-subtitle">探索台灣美的角落</h4>
+                </div>
+                <div class="city-text-div2">
+                    <p class="city-div-text">
+                        臺灣以高山百岳聞名國際，更有東北亞第一高山，登山能夠看見最美的台灣。除了群山綠意盎然，也因四面環海，北起北海岸南至鵝卵鼻都有著無邊無際的海景風光，看海總能讓人心廣神怡，隨著四季更迭探索不一樣的美。
+                    </p>
+                    <a target="_blank" href="./scene.html"
+                        ><button class="city-div-btn">
+                            探索更多景點
+                        </button></a
+                    >
+                </div>
+
+                <div class="city-bar-cointaner" id="city-bar-cointaner">
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img001.jpeg" alt="苗栗南庄吊橋"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img002.jpeg" alt="南投合歡山"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img003.jpeg" alt="花蓮七星潭"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img004.jpeg" alt="小琉球海龜"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img007.jpeg" alt="彰化扇形火車"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img006.jpeg" alt="台北101"/></a>
+                    </div>
+                    <div class="city-bar-list">
+                        <a href=""><img class="city-bar-img" src="./img/city-div-img005.jpeg" alt="金門風獅爺"/></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- index activities-->
+            <div class="activities-div">
+                <div class="activities-text-div">
+                    <h2 class="activities-div-title">Participate</h2>
+                    <h4 class="activities-div-subtitle">體驗台灣節慶活動</h4>
+                    <p class="activities-div-text">
+                        除了自然美景外，台灣擁有富裕族群與多元文化，在台灣旅行絕對不能錯過豐富的在地人文、歷史節慶、藝術文化等多元活動，這些活動通常伴隨著特色習俗、在地美食以及精彩的體驗活動，等你一一體驗。
+                    </p>
+                    <a target="_blank" href="./scene.html"> <button class="activities-div-btn">體驗更多活動</button></a>
+                </div>
+
+                <div>
+                    <img class="activities-img" src="./img/activities-img.JPG" alt="集集在地農活體驗" />
+                </div>
+            </div>
+
+            <!-- trip on bike -->
+            <div class="bike-div">
+                <div class="bike-text-div">
+                    <h2 class="bike-div-title">Slowdown</h2>
+                    <h4 class="bike-div-subtitle">單車漫遊台灣</h4>
+                    <p class="bike-div-text">
+                        認識台灣最好的方式就是慢下來<br />租台單車，騎進巷弄、騎進田野間、騎進山林裡<br />享受最自在的旅遊步調吧！
+                    </p>
+                    <button onclick="bikeClickFunction()" class="bike-div-btn">看看單車路線</button>
+                </div>
+            </div>
+
+            <script>
+                bikeClickFunction = () => {
+                    alert('施工中！第二週的挑戰賽過後才看得到唷！');
+                };
+            </script>
+
+            <!-- footer -->
+            <div class="footer">
+                <p class="footer-text">
+                    Copyright © 2021 TRAVEL. All rights reserved. <br />
+                    Code: 珊迪 | Design: Lola_Lin | API: 交通部 PTX 平台
+                </p>
+            </div>
+        </div>
+        <!-- loading -->
+    <script type="text/javascript" src="./js/index.js"></script></body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>找景點</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+            integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+            crossorigin="anonymous"
+        />
+        <link rel="icon" href="./img/titleicon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- navbar -->
+            <div class="navbar-box">
+                <a target="_self" href="./index.html"
+                    ><img class="navbar-logo" src="./img/logo.png" alt="Travel的Logo"
+                /></a>
+                <a target="_self" href="./scene.html"
+                    ><span class="navbar-link1 myMOUSE"
+                        >找景點<br />
+                        <p class="navbar-link1-eng">ATTRACTION</p>
+                    </span></a
+                >
+                <a target="_self" href="./activity.html">
+                    <span class="navbar-link2 myMOUSE"
+                        >玩活動<br />
+                        <p class="navbar-link2-eng">ACTIVITIES</p>
+                    </span></a
+                >
+                <i class="fas fa-heart navbar-heart myMOUSE"></i>
+            </div>
+            <!-- Search -->
+            <div class="search-group">
+                <div class="input-group">
+                    <form id="search-form" class="search-form">
+                        <input id="search-input" type="search" placeholder="想去哪裡玩呢？" aria-label="Search" />
+                    </form>
+                </div>
+
+                <!-- City Selection-->
+                <select class="city-select" id="citySelect"></select>
+                <div class="searchDivider1"></div>
+
+                <!-- Class Selection-->
+                <select class="class-select" id="classSelect"></select>
+                <button id="search-btn" class="search-btn" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="searchDivider2"></div>
+            </div>
+
+            <!-- Search Result -->
+            <div id="result" class="result-cards">
+                <!-- <div class="result-card">
+                <img class="result-card-img" src="./img/logo.png" alt="這是景點照片" />
+                <div class="card-content">
+                    <h6 class="card-text">title</h6>
+                    <span class="card-location"><i class="fas fa-map-marker-alt"></i>縣市區域</span>
+                    <span class="card-like"><i class="fas fa-heart"></i></span>
+                </div>
+            </div> -->
+            </div>
+
+            <!-- footer -->
+            <div class="footer">
+                <p class="footer-text">
+                    Copyright © 2021 TRAVEL. All rights reserved. <br />
+                    Code: 珊迪 | Design: Lola_Lin | API: 交通部 PTX 平台
+                </p>
+            </div>
+        </div>
+    <script type="text/javascript" src="./js/scene.js"></script></body>
+</html>
