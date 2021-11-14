@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
 
     const submitBtn = document.getElementById('activity-search-btn');
     submitBtn.addEventListener('click', function(e) {
-        console.log('1');
         const activityElement = document.getElementById('activitySelect');
         const activitySelectCityIndex = activityElement.selectedIndex;
         const activityCityKeys = Object.keys(cityList);

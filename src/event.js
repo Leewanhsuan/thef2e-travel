@@ -57,7 +57,7 @@ export const fetchDataToResultElement = (keyword, area, classFilter) => {
                         pictureDescription: pictureDescription,
                         name: element.Name,
                         index: index,
-                        city: element.City,
+                        city: element.City ?? '台灣',
                         id: element.ID,
                         detail: element.DescriptionDetail,
                         phone: element.Phone,
@@ -117,7 +117,7 @@ export const getFilterConditions = (keyword, area, classFilter) => {
 export const createCardHTMLElement = itemData => {
     return `
         <div class="result-card">
-            <a href="http://0.0.0.0:8080/detail.html?id=${itemData.id}" key="${itemData.index}" >
+            <a href="/detail.html?id=${itemData.id}" key="${itemData.index}" >
                 <img class="card-img" id="card-img" src="${itemData.pictureUrl}" alt="${itemData.pictureDescription}"/>
             </a> 
             <div class="card-content">

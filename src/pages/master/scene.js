@@ -13,6 +13,6 @@ window.addEventListener('load', () => {
     const searchBtn = document.getElementById('search-btn');
     searchBtn.addEventListener('click', () => {
         const [keyword, area, classFilter] = getInputData();
-        window.location.href = `http://0.0.0.0:8080/scene.html?keyword=${keyword}&area=${area}&classFilter=${classFilter}`;
+        window.location.href = `./scene.html?keyword=${keyword}&area=${area}&classFilter=${classFilter}`;
     });
 });
